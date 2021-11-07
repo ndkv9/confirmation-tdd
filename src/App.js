@@ -1,7 +1,10 @@
+import Confirmation from './components/Confirmation/Confirmation'
+
 function App() {
   return (
     <div>
-      <h2>hello world</h2>
+      <h1>hello world</h1>
+      <Confirmation />
     </div>
   )
 }

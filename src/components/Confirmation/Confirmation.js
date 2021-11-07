@@ -1,5 +1,9 @@
 const Confirmation = () => {
-  return <div role='dialog'></div>
+  return (
+    <div role='dialog'>
+      <h1>Confirmation</h1>
+    </div>
+  )
 }
 
 export default Confirmation

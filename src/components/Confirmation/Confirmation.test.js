@@ -11,4 +11,9 @@ describe('Confirmation component', () => {
     const dialogElement = screen.getByRole('dialog')
     expect(dialogElement).toBeInTheDocument()
   })
+
+  it('should have title with proper content', () => {
+    const titleElement = screen.getByText('Confirmation')
+    expect(titleElement).toBeInTheDocument()
+  })
 })

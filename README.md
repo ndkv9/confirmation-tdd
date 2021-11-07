@@ -1,1 +1,1 @@
-## Practice writing React component with TDD
+## Practice writing React components with TDD
