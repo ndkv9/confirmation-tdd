@@ -3,8 +3,8 @@ const Confirmation = ({ children, handleConfirm, handleCancel }) => {
     <div role='dialog'>
       <h1>Confirmation</h1>
       {children}
-      <button onClick={() => handleConfirm()}>OK</button>
-      <button onClick={() => handleCancel()}>Cancel</button>
+      <button onClick={handleConfirm}>OK</button>
+      <button onClick={handleCancel}>Cancel</button>
     </div>
   )
 }
