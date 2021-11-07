@@ -4,7 +4,8 @@ import Confirmation from './Confirmation'
 
 describe('Confirmation component', () => {
   beforeEach(() => {
-    render(<Confirmation />)
+    const question = 'Do you confirm?'
+    render(<Confirmation>{question}</Confirmation>)
   })
 
   it('should render', () => {
@@ -15,5 +16,10 @@ describe('Confirmation component', () => {
   it('should have title with proper content', () => {
     const titleElement = screen.getByText('Confirmation')
     expect(titleElement).toBeInTheDocument()
+  })
+
+  it('should have a dynamic confirmation question', () => {
+    const questionElement = screen.getByText('Do you confirm?')
+    expect(questionElement).toBeInTheDocument()
   })
 })
