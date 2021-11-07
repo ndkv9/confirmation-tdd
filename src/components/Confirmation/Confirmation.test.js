@@ -35,7 +35,7 @@ describe('Confirmation component', () => {
 })
 
 describe('with handlers', () => {
-  it('calls and handler for OK btb when it is clicked', () => {
+  it('calls and handler for OK btn when it is clicked', () => {
     const handleConfirm = jest.fn()
     render(
       <Confirmation handleConfirm={handleConfirm}>
@@ -45,5 +45,17 @@ describe('with handlers', () => {
     const confirmBtn = screen.getByRole('button', { name: 'OK' })
     fireEvent.click(confirmBtn)
     expect(handleConfirm).toBeCalled()
+  })
+
+  it('calls and handler for cancel btn when it is clicked', () => {
+    const handleCancel = jest.fn()
+    render(
+      <Confirmation handleCancel={handleCancel}>
+        {'are you sure?'}
+      </Confirmation>,
+    )
+    const cancelBtn = screen.getByRole('button', { name: 'Cancel' })
+    fireEvent.click(cancelBtn)
+    expect(handleCancel).toBeCalled()
   })
 })
