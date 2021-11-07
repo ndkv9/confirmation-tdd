@@ -27,4 +27,9 @@ describe('Confirmation component', () => {
     const confirmBtn = screen.getByRole('button', { name: 'OK' })
     expect(confirmBtn).toBeInTheDocument()
   })
+
+  it('should have an cancel button', () => {
+    const confirmBtn = screen.getByRole('button', { name: 'Cancel' })
+    expect(confirmBtn).toBeInTheDocument()
+  })
 })
