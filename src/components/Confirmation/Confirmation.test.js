@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import Confirmation from './Confirmation'
 
@@ -29,7 +29,21 @@ describe('Confirmation component', () => {
   })
 
   it('should have an cancel button', () => {
-    const confirmBtn = screen.getByRole('button', { name: 'Cancel' })
-    expect(confirmBtn).toBeInTheDocument()
+    const cancelBtn = screen.getByRole('button', { name: 'Cancel' })
+    expect(cancelBtn).toBeInTheDocument()
+  })
+})
+
+describe('with handlers', () => {
+  it('calls and handler for OK btb when it is clicked', () => {
+    const confirmBtn = screen.getByRole('button', { name: 'OK' })
+    const handleConfirm = jest.fn()
+    render(
+      <Confirmation handleConfirm={handleConfirm}>
+        {'are you sure?'}
+      </Confirmation>,
+    )
+    fireEvent.click(confirmBtn)
+    expect(handleConfirm).toBeCalled()
   })
 })
