@@ -3,6 +3,7 @@ const Confirmation = ({ children }) => {
     <div role='dialog'>
       <h1>Confirmation</h1>
       {children}
+      <button>OK</button>
     </div>
   )
 }
