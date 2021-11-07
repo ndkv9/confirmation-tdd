@@ -36,13 +36,13 @@ describe('Confirmation component', () => {
 
 describe('with handlers', () => {
   it('calls and handler for OK btb when it is clicked', () => {
-    const confirmBtn = screen.getByRole('button', { name: 'OK' })
     const handleConfirm = jest.fn()
     render(
       <Confirmation handleConfirm={handleConfirm}>
         {'are you sure?'}
       </Confirmation>,
     )
+    const confirmBtn = screen.getByRole('button', { name: 'OK' })
     fireEvent.click(confirmBtn)
     expect(handleConfirm).toBeCalled()
   })
