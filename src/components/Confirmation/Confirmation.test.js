@@ -22,4 +22,9 @@ describe('Confirmation component', () => {
     const questionElement = screen.getByText('Do you confirm?')
     expect(questionElement).toBeInTheDocument()
   })
+
+  it('should have an OK button', () => {
+    const confirmBtn = screen.getByRole('button', { name: 'OK' })
+    expect(confirmBtn).toBeInTheDocument()
+  })
 })
